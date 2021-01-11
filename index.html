@@ -25,13 +25,14 @@
 
   <!-- Custom styles for this template -->
   <link href="css/styles.css" rel="stylesheet">
+  <script src="//cdn.wordart.com/wordart.min.js" async defer></script>
 
 </head>
 
 <body>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/TempleBarChristmas.jpg')">
+  <header class="masthead" style="background-image: url('img/Banner.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -62,7 +63,15 @@
             can see a pattern. As temperatures fall going into the winter months of November, December and January, we
             can see repeated spikes in search volume for the term “homeless” over these months. </p>
 
-          <!-- Google trends chart here -->
+          <div class="mx-auto">
+            <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2431_RC04/embed_loader.js"></script>
+            <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", { "comparisonItem": [{ "keyword": "homeless", "geo": "", "time": "2016-01-11 2021-01-11" }], "category": 0, "property": "" }, { "exploreQuery": "date=today%205-y&q=homeless", "guestPath": "https://trends.google.com:443/trends/embed/" }); 
+            </script>
+          </div>
+
+          <div style="padding: 10px">
+            <img src="img/InterestByRegion.jpeg" style="width: 700px">
+          </div>
           <p>December of course, also sees the Christmas period, which (in Christian countries at least) is
             traditionally celebrated as a time of charity, giving and thinking of more vulnerable and less fortunate
             members of society.</p>
@@ -71,7 +80,14 @@
             Christmas period to appeal to this seasonal charitable sensibility by reminding the public of those battling
             the elements without shelter in the colder weather.</p>
 
-          <!-- Insert homelessness charity appeal tweet here   -->
+          <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr">Focus Ireland has helped more than 1,100 households to secure a home over the past
+              year and has launched a Christmas appeal to help keep families safe during the ongoing pandemic.<a
+                href="https://t.co/2bMoHR9XiN">https://t.co/2bMoHR9XiN</a></p>&mdash; FocusIreland (@FocusIreland) <a
+              href="https://twitter.com/FocusIreland/status/1341040304875593728?ref_src=twsrc%5Etfw">December 21,
+              2020</a>
+          </blockquote>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           <p>After a historically turbulent year, where the world not only battled an unprecedented global pandemic but
             also bore witness to many societal upheavals including, but not limited to the Black Lives Matter movement,
             a chaotic US election and Brexit finally coming into effect; I was interested to explore whether these
@@ -88,17 +104,9 @@
           <p>Additionally, the analysis will examine if and how broad current events affected the conversation around
             homelessness over the Christmas period.</p>
 
-          <!-- todo: change chart -->
-          <div class="flourish-embed flourish-chart" data-src="visualisation/4273075">
+          <div class="flourish-embed flourish-chart chart-fullSize" data-src="visualisation/4927776">
             <script src="https://public.flourish.studio/resources/embed.js"></script>
           </div>
-
-
-          <!-- todo: change chart -->
-          <div class="flourish-embed flourish-chart" data-src="visualisation/4292748">
-            <script src="https://public.flourish.studio/resources/embed.js"></script>
-          </div>
-
 
 
           <h2 class="section-heading">Research methodology</h2>
@@ -113,175 +121,205 @@
             35% of these tweets were original. The remainder were retweets, with approximately 13 tweets in 20 being
             retweets.</p>
 
-          <!-- todo: change tweet -->
-          <blockquote class="twitter-tweet">
-            <p lang="en" dir="ltr">With the number of new cases of <a
-                href="https://twitter.com/hashtag/Covid19?src=hash&amp;ref_src=twsrc%5Etfw">#Covid19</a> in Europe
-              increasing exponentially, <a href="https://twitter.com/CMOIreland?ref_src=twsrc%5Etfw">@CMOIreland</a>
-              says &quot;there is a substantial risk associated with international travel at the current time&quot;. |
-              <a href="https://t.co/rRQDm1WaZk">https://t.co/rRQDm1WaZk</a> <a
-                href="https://t.co/ewKJEvxmKw">pic.twitter.com/ewKJEvxmKw</a>
-            </p>&mdash; RTÉ News (@rtenews) <a
-              href="https://twitter.com/rtenews/status/1323585391115542528?ref_src=twsrc%5Etfw">November 3, 2020</a>
-          </blockquote>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
           <p>Though the code scraped tweets on a global scale, the following analysis will only consider those written
             in English.</p>
 
+          <h2 class="section-heading">When were people tweeting?</h2>
+
+          <div class="flourish-embed flourish-chart chart-fullSize" data-src="visualisation/4928477">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+          </div>
+
+          <p>The chart above shows the days on which I ran the Python scraper along with how many tweets were collected
+            on
+            each of those dates. Unfortunately, there were a few dates that I missed between my chosen dates of Dec 19
+            and
+            Jan 03. The scraper ran for at least 1 hour on each of these dates shown (and sometimes more).</p>
+
+          <h2 class="section-heading">Who was tweeting?</h2>
+
+          <h3>Bot analysis</h3>
+
+          <p>Before doing any analysis on the most prolific tweeters of the dataset, I assessed the top 20 accounts to
+            see
+            if I could weed out any potential bots. I used a combination of two bot detection tools, <a
+              href="https://botometer.osome.iu.edu/">Botomoter</a> and <a
+              href="https://chrome.google.com/webstore/detail/botsight/kahiiipphdmmkkamddaiiddmidmhbbil">Botsight</a>
+            to inform my own critical judgement of each account.</p>
+
+          <p>Of the top 20 accounts, I judged eight of them to be definite bots, three accounts had been suspended since
+            the
+            data was collected and a further two accounts lay on the line, as I could not be fully sure that they were
+            bots
+            or genuine humans. That left just six accounts out of the original top 20, that I determined to be genuine
+            accounts.</p>
+
+          <p>I continued my bot assessment down the top 20 list until I had found the top 10 genuine accounts, which can
+            be
+            seen in the chart below:</p>
+
+          <div class="flourish-embed flourish-chart" data-src="visualisation/4916807">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+          </div>
+
+          <p>Of the 53,763 tweets that were collected, only 0.46% came from the top 10 tweeters (excluding suspected bot
+            from the top ten accounts).</p>
+
+          <h2 class="section-heading">What kind of accounts feature in the top ten? </h2>
+          <p>The top ten accounts consists of a mixture of individuals and homelessness aid organisations. The types of
+            tweets that these accounts made fall into three main categories:</p>
+
+          <ol>
+            <li>Criticism of primarily US government officials/policies perceived to lead to widespread homelessness
+              (@joepdr, @rwwonwheels)</li>
+            <li>Homelessness charities/individuals raising awareness of homelessness and/or seeking donations
+              (@beanies_masato, @NatlHCHCouncil, @Foxography2, @KatieLeague, @invisiblepeople).</li>
+            <li>Homeless/ex-homeless individuals criticising homelessness organisations in the US and UK
+              (@Homeless_Info,
+              @ashleydeangelo1).</li>
+          </ol>
+
+          <p>There was one outlier in the top ten, @jmuhj1 who tweeted exclusively about cats and cat welfare.</p>
+
+          <h2 class="section-heading">Who were the biggest retweeters?</h2>
+          <p>As above, I assessed the top 20 most prolific retweeters to weed out any potential bots and get a list of
+            the
+            top ten genuine retweet accounts.</p>
+          <p>On first inspection, of the top 20 retweeters, I determined 15 of them to be bots, one was unclear and four
+            were genuine accounts. Continuing my bot analysis down the list, the following is the top ten list of
+            genuine
+            retweeters (a few of whom also feature in the top tweeters list):</p>
+
+          <div class="flourish-embed flourish-chart" data-src="visualisation/4919921">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+          </div>  
+
+          <h2 class="section-heading">How often were people tweeting?</h2>
+          <p>The vast majority of accounts did not tweet nearly as many times as the top ten tweeters. The 46,058 unique
+            users averaged 1.17 tweets or retweets over the 16.5 tracked hours over the 15 day period.</p>
+
+          <p>Users were much more likely to retweet rather than write original tweets, given that almost 65% of the
+            total
+            number of tweets were retweets. It is important not to overlook the relevance of retweets in a dataset.
+            Although
+            they may not communicate original thoughts and opinions, they are an important barometer to gauge the
+            popularity
+            of certain sentiments around a given topic. </p>
+          <p>In ‘The Why We Retweet Scale’ Majmundar et al. posit that retweets can communicate many different
+            intentions,
+            which can be grouped into four general category definitions. These are as follows:</p>
+
+          <ol>
+            <li>Show approval, "Show support to the tweeter"</li>
+            <li>Argue, "To argue against a tweet that I disagree with"</li>
+            <li>Gain attention, "Add followers or gain attention"</li>
+            <li>Entertain, "Create humor/amusement"</li>
+          </ol>
+
+          (Majmundar et al., 2018)
+
+          <p>To explore Majmundar’s categories in context, let’s take a closer look at what people were sharing the most
+            in
+            the dataset. The following table shows the top ten most retweeted English language tweets. It also shows how
+            each of these retweets falls into one or more of Majmundar’s intention categories.</p>
+
+          <div class="flourish-embed flourish-table" data-src="visualisation/4921076">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+          </div>
+
+          <h2 class="section-heading">Where were people tweeting from?</h2>
+          <p>65% of the total tweets listed a location in the user’s profile bio. Unfortunately however, location data
+            is
+            set by the user and therefore must be taken with a grain of salt. </p>
+
+          <p>This is because, firstly, users are free to set their location to anything they want (including fictional
+            places or text that doesn’t denote a location at all). Secondly, even if a user does enter a real location,
+            it
+            might not necessarily reflect where the user is actually tweeting from. </p>
+          <p>Having noted this disclaimer, here’s a quick breakdown* of tweet volumes from some major countries around
+            the
+            world that were included in the data:</p>
+          <div class="flourish-embed flourish-hierarchy" data-src="visualisation/4921345">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+          </div>
+          <p>*Only countries which recorded 30 or more tweets in the dataset were included on the chart.</p>
+
+          <h2 class="section-heading">What were people saying? </h2>
+
+          <div style="width: 400px; height: 400px;" data-wordart-src="//cdn.wordart.com/json/mvb0eyonp2be"></div>
+
+          <p>The word cloud above shows the most popular words and phrases that appeared in the dataset. This
+            illustrates
+            the nature of the discussion around homelessness. I made it using two online word cloud generating tools.
+          </p>
+
+          <p>First I used <a href="https://monkeylearn.com/word-cloud/">MonkeyLearn</a> to find out what were the most
+            popular phrases (as opposed to singular words) and then
+            I took this data and used it produce a customised word cloud using <a href="https://wordart.com/">Word
+              Art</a>.
+          </p>
+
+          <p>Additionally, using the word frequency data gathered using these tools, I analysed both unique tweets and
+            retweets to find some of the most popular topics tweeted about in relation to homelessness. </p>
+
+          <p>I considered performing this analysis by isolating popular hashtags in the data but discovered that only
+            16.5%
+            of tweeters used one or more hashtag (#) symbols. As such, instead I analysed the tweet text data by
+            isolating
+            tweets containing the word ‘homeless’ (without the # prefix) in conjunction with ten popular topics that
+            appeared a significant amount in the data.</p>
+
+          <div class="flourish-embed flourish-chart" data-src="visualisation/4924912">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+          </div>
+
+          <p>The most popular topic by far was Covid/pandemic with tweeters primarily expressing sentiments on how
+            Covid19
+            has negatively impacted the problem of homelessness. Criticism of governmental policies was the top of the
+            discussion list, but the dataset also showed a wide range of opinions including but not limited to how the
+            pandemic has led to: </p>
+
+          <ol>
+            <li>More people being homeless/facing homelessness now due to mass unemployment. </li>
+            <li>Homeless people being unable to or having reduced access to public buildings. </li>
+            <li>Homeless shelters being unable to take in homeless individuals. </li>
+            <li>Increased need for support and donations to homelessness charities. </li>
+            <li>Increased need for awareness of homeless people’s welfare in the face of the challenges that Covid
+              restrictions present. </li>
+          </ol>
+
+          <p>An outlying opinion that proved to be surprisingly popular came through in a number of tweets. It
+            questioned
+            whether the pandemic is real or a hoax. These tweets used the homeless community as the strawman for their
+            argument, suggesting that the homeless mortality rate would be far higher if we were experiencing a genuine
+            pandemic. For example: </p>
+
+          <p>“@Braveheart_USA: If this was a real pandemic, the homeless population would be decimated and bodies would
+            be
+            everywhere in California.... Let that sink in” (retweeted 34 times). </p>
+          <p>The most retweeted English language tweet of the entire dataset, mentioned the second most popular topic in
+            relation to homelessness – Trump. The tweet came from Walter Shaub, an American attorney specialising in
+            government ethics and former director of the United States Office of Government Ethics and was retweeted 869
+            times. The tweet has since been deleted but it read:
+          </p>
+          <p>@waltshaub: “Trump asked his staff about options for the violent overthrow of the United States government.
+            Jim Jordan tells families at risk of hunger or homelessness during the pandemic to get a job. Sunday morning
+            show producers want to hear more about someone calling them a name. Garbage.”</p>
+          <p>The seasonal tweets relating to homelessness (those including the words Christmas/Xmas and New Year)
+            featured much less criticism and mainly consisted of tweets designed to raise awareness of homelessness and
+            charity organisations calling for donations. </p>
+
+          <h2 class="section-heading">Conclusions</h2>
+          <p>Though Twitter is not without its faults, it remains a good resource for researchers to gauge public
+            interest and sentiment on any given topic, whether over time or on an immediate basis.</p>
+          <p>This particular research could be, for example, a good starting point to inform a journalist’s research for
+            an investigative piece on how the global pandemic has affected the issue of homelessness.</p>
+          <p>The collected data could be used to gauge the current level of awareness around the kind of obstacles that
+            homeless people and charities are currently facing; to see what different types of people and organisations
+            are saying about the current state of homelessness, as well as discovering which individual opinions are
+            gaining the most traction with the rest of Twitter, among other things.</p>
         </div>
-
       </div>
-
-      <h2 class="section-heading">When were people tweeting?</h2>
-
-      <!-- todo -->
-      Insert time series chart for dates of tweets
-
-      <p>The chart above shows the days on which I ran the Python scraper along with how many tweets were collected on
-        each of those dates. Unfortunately, there were a few dates that I missed between my chosen dates of Dec 19 and
-        Jan 03. The scraper ran for at least 1 hour on each of these dates shown (and sometimes more).</p>
-
-      <h2 class="section-heading">Who was tweeting?</h2>
-
-      <h3>Bot analysis</h3>
-
-      <p>Before doing any analysis on the most prolific tweeters of the dataset, I assessed the top 20 accounts to see
-        if I could weed out any potential bots. I used a combination of two bot detection tools, <a
-          href="https://botometer.osome.iu.edu/">Botomoter</a> and <a
-          href="https://chrome.google.com/webstore/detail/botsight/kahiiipphdmmkkamddaiiddmidmhbbil">Botsight</a>
-        to inform my own critical judgement of each account.</p>
-
-      <p>Of the top 20 accounts, I judged eight of them to be definite bots, three accounts had been suspended since the
-        data was collected and a further two accounts lay on the line, as I could not be fully sure that they were bots
-        or genuine humans. That left just six accounts out of the original top 20, that I determined to be genuine
-        accounts.</p>
-
-      <p>I continued my bot assessment down the top 20 list until I had found the top 10 genuine accounts, which can be
-        seen in the chart below:</p>
-
-      <!-- todo: -->
-      Insert bar chart of top 10 tweeters showing their tweets versus retweets
-
-      <p>Of the 53,763 tweets that were collected, only 0.46% came from the top 10 tweeters (excluding suspected bot
-        from the top ten accounts).</p>
-
-      <h2 class="section-heading">What kind of accounts feature in the top ten? </h2>
-      <p>The top ten accounts consists of a mixture of individuals and homelessness aid organisations. The types of
-        tweets that these accounts made fall into three main categories:</p>
-
-      <ol>
-        <li>Criticism of primarily US government officials/policies perceived to lead to widespread homelessness
-          (@joepdr, @rwwonwheels)</li>
-        <li>Homelessness charities/individuals raising awareness of homelessness and/or seeking donations
-          (@beanies_masato, @NatlHCHCouncil, @Foxography2, @KatieLeague, @invisiblepeople).</li>
-        <li>Homeless/ex-homeless individuals criticising homelessness organisations in the US and UK (@Homeless_Info,
-          @ashleydeangelo1).</li>
-      </ol>
-
-      <p>There was one outlier in the top ten, @jmuhj1 who tweeted exclusively about cats and cat welfare.</p>
-
-      <h2 class="section-heading">Who were the biggest retweeters?</h2>
-      <p>As above, I assessed the top 20 most prolific retweeters to weed out any potential bots and get a list of the
-        top ten genuine retweet accounts.</p>
-      <p>On first inspection, of the top 20 retweeters, I determined 15 of them to be bots, one was unclear and four
-        were genuine accounts. Continuing my bot analysis down the list, the following is the top ten list of genuine
-        retweeters (a few of whom also feature in the top tweeters list):</p>
-
-      <!-- todo -->
-      Insert bar chart of top retweeters  
-
-      <h2 class="section-heading">How often were people tweeting?</h2>
-      <p>The vast majority of accounts did not tweet nearly as many times as the top ten tweeters. The 46,058 unique
-        users averaged 1.17 tweets or retweets over the 16.5 tracked hours over the 15 day period.</p>
-
-      <!-- todo -->
-      Insert tweet volumes bar chart
-      <p>Users were much more likely to retweet rather than write original tweets, given that almost 65% of the total
-        number of tweets were retweets. It is important not to overlook the relevance of retweets in a dataset. Although
-        they may not communicate original thoughts and opinions, they are an important barometer to gauge the popularity
-        of certain sentiments around a given topic. </p>
-      <p>In ‘The Why We Retweet Scale’ Majmundar et al. posit that retweets can communicate many different intentions,
-        which can be grouped into four general category definitions. These are as follows:</p>
-
-      <ol>
-        <li>Show approval, "Show support to the tweeter"</li>
-        <li>Argue, "To argue against a tweet that I disagree with"</li>
-        <li>Gain attention, "Add followers or gain attention"</li>
-        <li>Entertain, "Create humor/amusement"</li>
-      </ol>
-
-      (Majmundar et al., 2018)
-
-      <p>To explore Majmundar’s categories in context, let’s take a closer look at what people were sharing the most in
-        the dataset. The following table shows the top ten most retweeted English language tweets. It also shows how
-        each of these retweets falls into one or more of Majmundar’s intention categories.</p>
-
-      <!-- todo -->
-      Insert bingo table
-
-      <h2 class="section-heading">Where were people tweeting from?</h2>
-      <p>65% of the total tweets listed a location in the user’s profile bio. Unfortunately however, location data is
-        set by the user and therefore must be taken with a grain of salt. </p>
-
-      <p>This is because, firstly, users are free to set their location to anything they want (including fictional
-        places or text that doesn’t denote a location at all). Secondly, even if a user does enter a real location, it
-        might not necessarily reflect where the user is actually tweeting from. </p>
-      <p>Having noted this disclaimer, here’s a quick breakdown* of tweet volumes from some major countries around the
-        world that were included in the data:</p>
-      <!-- todo -->
-      Insert circle chart of tweet locations
-      <p>*Only countries which recorded 30 or more tweets in the dataset were included on the chart.</p>
-
-      <h2 class="section-heading">What were people saying? </h2>
-      <!-- todo -->
-      Insert word cloud
-
-      <p>The word cloud above shows the most popular words and phrases that appeared in the dataset. This illustrates
-        the nature of the discussion around homelessness. I made it using two online word cloud generating tools. </p>
-
-      <p>First I used <a href="https://monkeylearn.com/word-cloud/">MonkeyLearn</a> to find out what were the most
-        popular phrases (as opposed to singular words) and then
-        I took this data and used it produce a customised word cloud using <a href="https://wordart.com/">Word Art</a>.
-      </p>
-
-      <p>Additionally, using the word frequency data gathered using these tools, I analysed both unique tweets and
-        retweets to find some of the most popular topics tweeted about in relation to homelessness. </p>
-
-      <p>I considered performing this analysis by isolating popular hashtags in the data but discovered that only 16.5%
-        of tweeters used one or more hashtag (#) symbols. As such, instead I analysed the tweet text data by isolating
-        tweets containing the word ‘homeless’ (without the # prefix) in conjunction with ten popular topics that
-        appeared a significant amount in the data.</p>
-
-      <!-- todo -->
-      Insert frequency of topics line chart
-
-      <p>The most popular topic by far was Covid/pandemic with tweeters primarily expressing sentiments on how Covid19
-        has negatively impacted the problem of homelessness. Criticism of governmental policies was the top of the
-        discussion list, but the dataset also showed a wide range of opinions including but not limited to how the
-        pandemic has led to: </p>
-
-      <ol>
-        <li>More people being homeless/facing homelessness now due to mass unemployment. </li>
-        <li>Homeless people being unable to or having reduced access to public buildings. </li>
-        <li>Homeless shelters being unable to take in homeless individuals. </li>
-        <li>Increased need for support and donations to homelessness charities. </li>
-        <li>Increased need for awareness of homeless people’s welfare in the face of the challenges that Covid
-          restrictions present. </li>
-      </ol>
-
-      <p>An outlying opinion that proved to be surprisingly popular came through in a number of tweets. It questioned
-        whether the pandemic is real or a hoax. These tweets used the homeless community as the strawman for their
-        argument, suggesting that the homeless mortality rate would be far higher if we were experiencing a genuine
-        pandemic. For example: </p>
-
-      <p>“@Braveheart_USA: If this was a real pandemic, the homeless population would be decimated and bodies would be
-        everywhere in California.... Let that sink in” (retweeted 34 times). </p>
-      <p>The most retweeted English language tweet of the entire dataset, mentioned the second most popular topic in
-        relation to homelessness – Trump. The tweet came from Walter Shaub, an American attorney specialising in
-        government ethics and former director of the United States Office of Government Ethics and was retweeted 869
-        times. The tweet has since been deleted but it read:
-      </p>
     </div>
     </div>
   </article>
