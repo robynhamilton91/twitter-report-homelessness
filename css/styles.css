@@ -30,12 +30,12 @@ h6 {
 }
 
 a {
-  color: #93143b;
+  color: #748fcb;
   transition: all 0.2s;
 }
 
 a:focus, a:hover {
-  color: #b71641;
+  color: #748fcb;
 }
 
 blockquote {
@@ -47,7 +47,7 @@ blockquote {
   font-size: 36px;
   font-weight: 600;
   margin-top: 50px;
-  color: #93143b;
+  color: #7296e6;
 }
 
 .caption {
